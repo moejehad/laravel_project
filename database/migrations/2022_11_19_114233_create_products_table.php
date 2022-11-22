@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->integer('discount_price');
             $table->string('flag');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

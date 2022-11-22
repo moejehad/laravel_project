@@ -74,4 +74,10 @@ class ProductController extends Controller
 
     }
 
+
+    public function deletedProducts(){
+        $products = Product::with('store')->onlyTrashed()->get();
+        return view('admin.products.deleted',['products' => $products]);
+    }
+
 }

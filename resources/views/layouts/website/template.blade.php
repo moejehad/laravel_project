@@ -67,14 +67,16 @@
                   <span class="toggle_icon" onclick="openNav()"><img src="{{ asset('website/images/toggle-icon.png') }}"></span>
                   <div class="main">
                      <!-- Another variation with a button -->
-                     <div class="input-group mb-4">
-                        <input type="text" class="form-control" placeholder="Search">
-                        <div class="input-group-append">
-                           <button class="btn btn-secondary" type="button" style="background-color: #f26522; border-color:#f26522 ">
-                           <i class="fa fa-search"></i>
-                           </button>
+                     <form method="GET" action="{{ url('/search') }}">
+                        <div class="input-group mb-4">
+                            <input type="text" class="form-control" name="query" placeholder="Search">
+                            <div class="input-group-append">
+                            <button class="btn btn-secondary" type="submit" style="background-color: #f26522; border-color:#f26522 ">
+                            <i class="fa fa-search"></i>
+                            </button>
+                            </div>
                         </div>
-                     </div>
+                    </form>
                   </div>
                </div>
             </div>

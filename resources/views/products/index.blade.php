@@ -4,7 +4,7 @@
 @section('content')
 <div class="fashion_section">
     <div class="container">
-        <h1 class="fashion_taital mt-4">All Products</h1>
+        <h1 class="fashion_taital mt-4">{{ $title}}</h1>
         <div class="fashion_section_2">
             <div class="row">
                 @foreach ($products as $product)

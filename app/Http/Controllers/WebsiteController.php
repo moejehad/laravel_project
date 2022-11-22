@@ -42,7 +42,7 @@ class WebsiteController extends Controller
 
     public function products(){
         $products = Product::with('store')->select('*')->get();
-        return view('products.index',['products' => $products]);
+        return view('products.index',['products' => $products,'title' => 'All Products']);
     }
 
 
@@ -56,6 +56,13 @@ class WebsiteController extends Controller
         $purchase->save();
 
         return view('products.purchase',['product' => $product]);
+    }
+
+
+    public function search(){
+        $search_text = $_GET['query'];
+        $products = Product::where('name','LIKE','%'.$search_text.'%')->get();
+        return view('products.index',['products' => $products,'title' => 'Search Result']);
     }
 
 

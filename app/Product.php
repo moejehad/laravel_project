@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
+
+    use SoftDeletes;
+
     public function store(){
         return $this->belongsTo('App\Store');
     }

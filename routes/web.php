@@ -18,6 +18,7 @@ Route::get('/stores', 'WebsiteController@stores');
 Route::get('/stores/{id}', 'WebsiteController@showStore');
 Route::get('/products', 'WebsiteController@products');
 Route::get('/products/purchase/{id}', 'WebsiteController@purchase');
+Route::get('/search', 'WebsiteController@search');
 
 Auth::routes();
 Route::get('/admin/dashboard', 'HomeController@index');
@@ -33,10 +34,12 @@ Route::get('/admin/stores/{id}', 'StoreController@show')->middleware('auth');
 Route::get('/admin/products', 'ProductController@index')->middleware('auth');
 Route::get('/admin/products/create', 'ProductController@create')->middleware('auth');
 Route::post('/admin/products/store', 'ProductController@store')->middleware('auth');
+Route::get('/admin/products/deleted', 'ProductController@deletedProducts')->middleware('auth');
 Route::delete('/admin/products/delete/{id}', 'ProductController@destroy')->middleware('auth');
 Route::get('/admin/products/edit/{id}', 'ProductController@edit')->middleware('auth');
 Route::put('/admin/products/update/{id}', 'ProductController@update')->middleware('auth');
 Route::get('/admin/products/{id}', 'ProductController@show')->middleware('auth');
+
 
 Route::get('/admin/purchases', 'PurchaseController@index')->middleware('auth');
 
