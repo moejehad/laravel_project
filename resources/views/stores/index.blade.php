@@ -5,6 +5,11 @@
     <div class="fashion_section">
         <div class="container">
             <h1 class="fashion_taital mt-5">All Stores</h1>
+
+            @if (count($stores) == 0)
+                <h6 class="alert alert-danger m-2">No Stores Found</h6>
+            @endif
+
             <div class="fashion_section_2">
             <div class="row">
                 @foreach ($stores as $store)

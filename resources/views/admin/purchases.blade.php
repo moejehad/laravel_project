@@ -16,6 +16,9 @@
             </div>
             <div class="card-body px-0 pt-0 pb-2">
             <div class="table-responsive p-0">
+                @if (count($purchases) == 0)
+                    <h6 class="alert alert-danger m-2">No Purchases Found</h6>
+                @endif
                 <table class="table align-items-center mb-0">
                 <thead>
                     <tr>

@@ -87,6 +87,9 @@
                 </div>
             </div>
             <div class="table-responsive">
+                @if (count($products) == 0)
+                    <h6 class="alert alert-danger m-2">No Products Found</h6>
+                @endif
                 <table class="table align-items-center ">
                 <tbody>
                     @foreach ($products as $product)
@@ -154,6 +157,9 @@
                 <h6 class="mb-0">Last 5 Stores</h6>
             </div>
             <div class="card-body p-3">
+                @if (count($stores) == 0)
+                    <h6 class="alert alert-danger m-2">No Stores Found</h6>
+                @endif
                 <ul class="list-group">
                     @foreach ($stores as $store)
                     <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
